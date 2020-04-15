@@ -1,4 +1,5 @@
-"""Install this Python package.
+"""
+Install this Python package.
 """
 
 # pylint: disable=invalid-name
@@ -9,7 +10,8 @@ from setuptools import setup, find_packages
 
 
 class Setup(object):
-    """Convenience wrapper (for C.I. purposes) of the `setup()` call form `setuptools`.
+    """
+    Convenience wrapper (for C.I. purposes) of the `setup()` call form `setuptools`.
     """
     def __init__(self, **kw):
         self.conf = kw
@@ -79,7 +81,8 @@ SETUP = Setup(
 
     # You can just specify the packages manually here if your project is simple. Or you can use
     # find_packages().
-    packages=find_packages(exclude=['tutorials']),
+    package_dir={'': 'src'},
+    packages=find_packages(where='src'),
 
     # List run-time dependencies here. These will be installed by pip when your project is
     # installed. For an analysis of "install_requires" vs pip's requirements files see:
